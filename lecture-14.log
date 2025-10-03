@@ -1,10 +1,13 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.9.26)  1 OCT 2025 21:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.9.26)  2 OCT 2025 22:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**\input{preamble.tex}	\begin{document}	\setcounter{section}{3}	\section{Fair D
-ivision}	\setcounter{subsection}{2}	\input{lecture-14.tex}	\end{document}
-(./preamble.tex (./notes.cls
+**"\input{preamble.tex}\begin{document}\setcounter{section}{3}\section{Fair Div
+ision}\input{lecture-14.tex}\end{document}"
+(/usr/share/texmf-dist/tex/latex/tools/.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+File ignored) (./preamble.tex (./notes.cls
 Document Class: notes 
 (/usr/share/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
@@ -487,18 +490,18 @@ L3 programming layer <2025-01-18>
  ***********
  
 Here is how much of TeX's memory you used:
- 13056 strings out of 475171
- 260766 string characters out of 5767095
+ 13059 strings out of 475171
+ 260888 string characters out of 5767095
  621849 words of memory out of 5000000
  35839 multiletter control sequences out of 15000+600000
  562389 words of font info for 50 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 106i,8n,110p,541b,241s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 106i,8n,110p,511b,241s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/c
 m-super/sfrm1000.pfb>
-Output written on lecture-14.pdf (5 pages, 55511 bytes).
+Output written on lecture-14.pdf (5 pages, 55446 bytes).
 PDF statistics:
  44 PDF objects out of 1000 (max. 8388607)
  28 compressed objects within 1 object stream
