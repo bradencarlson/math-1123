@@ -1,0 +1,393 @@
+\subsection{Review}
+
+\subsubsection{Voting Theory}
+
+\content{
+        \begin{example} Let's look the following vote. \\
+        \begin{tabular}{|l|c|c|c|c|}
+        \hline
+        & 1 & 3 & 3 & 3 \\
+        \hline
+        1st Choice  & A & A & O & H \\
+        \hline
+        2nd Choice  & O & H &H&A \\
+        \hline
+        3rd Choice & H&O&A&O \\
+        \hline
+        \end{tabular}
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+}{% comments
+Do plurality method. 
+}
+
+\content{
+        \begin{example} 
+        Perform the Pairwise comparison method with the following preference
+        schedule. 
+        \begin{tabular}{|l|c|c|c|c|} 
+        \hline
+        & 5&5&6&4\\
+        \hline
+        1st & D&A&C&B\\
+        \hline
+        2nd & A&C&B&D\\
+        \hline
+        3rd & C&B&D&A\\
+        \hline
+        4th & B&D&A&C\\
+        \hline
+        \end{tabular}
+        \end{example}
+}{% presentation
+\vspace{4in}
+}{% nopresentation
+}{% comments
+If $D$ drops out, that affects who wins! This violates the IIA criterion. 
+}
+
+\content{
+\begin{example} Who wins the following election under the plurality with
+elimination method? \\
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+& 37 & 22 & 12 & 29 \\
+\hline
+1st & A&B&B&C\\
+\hline
+2nd & B&C&A&A\\
+\hline
+3rd & C&A&C&B\\
+\hline
+\end{tabular}
+\end{example}
+}{% presentation
+\vspace{2in}
+}{% nopresentation
+}{% comments
+$C$ is eliminated first, then $A$ wins with the majority. 
+}
+
+\content{
+Now, suppose that after officials have announced the results, the ballots were
+accidentally destroyed before they could be certified, so the votes have to be
+recast. Ten of the people whose preference was $B,C,A$ decide that they want to
+now support the winner $A$, so they change their votes to $A,B,C$, all the other
+votes remain the same. What are the results of the election now? \\
+\begin{tabular}{|l|p{0.25in}|p{0.25in}|p{0.25in}|p{0.25in}|}
+\hline
+&  &  &  &  \\
+\hline
+1st & &&&\\
+\hline
+2nd & &&&\\
+\hline
+3rd & &&&\\
+\hline
+\end{tabular}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+}{% comments
+Discuss the monotonicity criterion, this is a violation of it. 
+}
+
+\content{
+        \begin{example} Use Borda Count method to determine the winner of the
+        election.
+        \begin{tabular}{|l|c|c|c|c|}
+        \hline
+        & 51 & 25 & 10 & 14 \\
+        \hline
+        1st & S&T&P&O\\
+        \hline
+        2nd & T&P&T&T\\
+        \hline
+        3rd & O&O&O&P\\
+        \hline
+        4th & P&S&S&S\\
+        \hline
+        \end{tabular}
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+Notice that $T$ wins but someone else has a majority, review majority criterion. 
+}
+
+\subsubsection{Weighted Voting}
+
+\content{
+        \begin{example} Determine all the players who have veto power in the
+        following weighted voting system: 
+        $$ [34: 12, 11, 10, 7, 3 ]. $$
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+Players 1, 2, and 3 all have veto power. 
+}
+
+\content{
+        \begin{definition} To calculate the Banzhaf Power Index: 
+        \begin{itemize}
+        \item List all winning coalitions.
+        \item In each winning coalition, determine all players who are critical.
+        \item Count up how many times each play is critical. 
+        \item Convert these to fractions by dividing by the total times any
+        player is critical. 
+        \end{itemize}
+        \end{definition}
+
+        \begin{example} Calculate the Banzhaf Power Index for the three players
+        in the following weighted voting system 
+        $$ [10: 7, 6, 2]. $$
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
+
+\content{
+        \begin{example} Calculate the Banzhaf Power Index for the following
+        weighted voting system
+        $$ [ 8: 6,3,2 ]. $$
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+$P_1 = 3/5$, $P_2 = 1/5$ and $P_3 =1/5$.
+}
+
+\content{
+        \begin{definition} (Shapley-Shubik power index) To compute the
+        shapley-shubik power index: 
+        \begin{itemize}
+        \item List all sequential coalitions
+        \item Determine all pivotal players
+        \item Count up how many times each player was critical
+        \item convert these into fractions by deviding each count by the total
+        number of sequential coalitions
+        \end{itemize}
+        \end{definition}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+        \begin{example} Calculate the Shapley-Shubik Power Index for the following
+        weighted voting system
+        $$ [ 8: 6,3,2 ]. $$
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
+
+\subsubsection{Apportionment}
+
+\content{
+        \begin{definition} For \textbf{Hamilton's Method}, we perform the
+        following steps: 
+        \begin{itemize}
+        \item Calculate the \textbf{divisor}: (total population divided by total
+        number of representatives) 
+        \item Calculate the \textbf{quota} for each state: (state's population
+        divided by divisor)
+        \item Calculate \textbf{lower quotas}
+        \item Assign any remaining representatives to those states whose decimal
+        parts of the quota was largest. 
+        \end{itemize}
+        \end{definition}
+}{% presentation
+}{% nopresentation
+}{% comments
+lower quotas are rounded down. 
+}
+
+\content{
+\begin{example} The state of Delaware has three counties: Kent, New Castle, 
+and Sussex. The Delaware state House of Representatives has 41 members. If 
+Delaware wants to divide this representation along county lines,
+let’s use Hamilton’s method to 
+apportion them. The populations of the counties are as follows (from the 
+2010 Census): Kent: 162,310, New Castle: 538,479, and Sussex: 197,145.
+\end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+total pop is 897,934.
+}
+
+\content{
+        \begin{definition}
+        \begin{itemize}
+        \item Find the Standard divisor
+        \item Find each states lower quota
+        \item If the lower quotas do not add up to the number of seats
+        available, then adjust the divisor, and go back to step 2. 
+        \end{itemize}
+        \end{definition}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+        \begin{example} Let's redo the first example from last time, this time
+        with Jefferson's method. \\
+        \begin{tabular}{lr}
+        County & Population \\
+        \hline
+        Kent & 162,310 \\
+        New Castle & 538,479 \\
+        Sussex & 197,145 \\
+        \hline
+        Total & 1,052,567
+        \end{tabular}
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
+
+\subsubsection{Fair Division}
+
+\content{
+        \begin{example} Suppose that Betty and Cade are sharing a cake which is
+        half strawberry and half vanilla. If there are six slices of cake total,
+        and cade values straberry 3 times as much as he values vanilla, how much
+        is each slice of straberry worth to him? 
+        \end{example}
+}{%presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
+
+\content{
+        \begin{example} Troy and Abed are sharing a Subway sandwich, which is
+        a foot long and half veggie and half chicken. Troy likes chicken 2 times as much as
+        veggies, and Abed likes chicken and veggies equally. If Troy is the
+        divider, describe how he will split the sandwich (only vertical slices
+        are allowed). Which part will Abed choose? 
+        \end{example}
+}{%presentation
+\vspace{4in}
+}{% nopresentation
+\vspace{4in}
+}{% comments
+}
+
+\content{
+        \begin{definition} (The Lone Divider Method) 
+        \begin{enumerate}
+        \item The divider divides the item into $N$ pieces, which we'll label
+        $s_1$, $s_2$, ..., $s_N$.
+        \item Each of the choosers will separately list which pieces they
+        consider to be a fair share. This is called their bid. 
+        \item The lists are examined. There are two possibilities: 
+        \begin{enumerate}
+            \item If it is possible to assign each player a piece that they bid
+            on, then do so, and the divider gets the remaining piece. 
+            \item If this is not possible, then the divider receives an
+            uncontested piece, and the remaining $N-1$ parties repeat the entire
+            procedure. If there are only 2 players left, they may use the
+            Divider Chooser method. 
+            \end{enumerate}
+        \end{enumerate}
+        \end{definition}
+}{%presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+        \begin{example} Consider the following example. Who is the divider? Is
+        there a fair division for this example? Why does the Lone Divider method
+        guarantee a fair division in this example? \\
+        \begin{tabular}{|l|l|l|l|}
+        \hline
+        & Piece 1 & Piece 2 & Piece 3 \\
+        \hline
+        Chad & 40\% & 30 \% & 30 \% \\
+        \hline
+        Brody & 45\% & 30\%  & 25\% \\
+        \hline
+        Mary & 33.3\% & 33.3\% & 33.3\% \\
+        \hline
+        \end{tabular}
+        \end{example}
+}{%presentation
+\vspace{2in}
+}{% nopresentation
+\vspace{2in}
+}{% comments
+}
+\content{
+        \begin{definition} The method begins by compiling a list of items to be
+        divided. Then: 
+        \begin{enumerate}
+        \item Each party involved lists, in secret, a dollar amount they 
+        value each item to be worth. This is their sealed bid.
+        \item The bids are collected. For each party, the value of all the 
+        items is totaled, and divided by the number of parties. This 
+        defines their fair share.  
+        \item Each item is awarded to the highest bidder.
+        \item For each party, the value of all items received is totaled. 
+        If the value is more than that party’s fair share, they pay the 
+        difference into a holding pile. If the value is less than that party
+        ’s fair share, they receive the difference from the holding pile. 
+        This ends the initial allocation.  
+        \item In most cases, there will be a surplus, or leftover money, in 
+        the holding pile.  The surplus is divided evenly between all the 
+        players. This produces the final allocation.
+        \end{enumerate}
+        \end{definition}
+}{%presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+        \begin{example} Jamal, Maggie, and Kendra are dividing an estate 
+        consisting of a house, a vacation home, and a small business. Their 
+        valuations (in thousands) are shown below. Determine the final 
+        allocation.  \\
+
+        \begin{tabular}{|l|l|l|l|}
+        \hline
+        & Jamal & Maggie & Kendra \\
+        \hline
+        House & \$250 & \$300 & \$280 \\
+        \hline
+        Vacation Home & \$170 & \$180 & \$200 \\
+        \hline
+        Small Business & \$300 & \$255 & \$270 \\
+        \hline
+        \end{tabular}
+        \end{example}
+}{%presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{4in}
+}{% comments
+}
