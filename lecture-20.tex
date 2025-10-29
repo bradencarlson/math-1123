@@ -1,0 +1,90 @@
+\subsection{Intro to Cryptography}
+
+
+\content{
+        In this chapter, we will be assisting Alice and Bob communicate with each
+        other. They are very secretive and do not like their conversations to be
+        known by others. 
+
+        Then there's Eve...
+}{% presentation
+\vspace{2in}
+}{% nopresentation
+\vspace{2in}
+}{% comments
+}
+
+\content{
+        Let's talk about how we might do this for a second. Suppose that you and
+        the person next to you live in different cities (for the purpose of this
+        exercise, we all live in a time where messages must be written down and
+        taken by a courier to wherever they need to go). You are visiting your
+        friend and you decide you want to be able to send secret messages to
+        each other, but you don't trust your couriers not to read your message.
+        How might you decide to make your messages secret?
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
+
+\subsection{Shift Ciphers}
+
+\content{
+        \begin{example}
+        A shift cipher is a simple kind of cipher where the alphabet is shifted
+        to obscure the original message. For example, if we choose to use a
+        shift cipher, and our secret key is 3, then we encode messages according
+        to the following: 
+        
+        \texttt{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+
+        \vspace{-15pt}\hspace{16pt}\texttt{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
+
+\content{
+        \begin{example}
+        Use a shift cipher with key 5 to encrypt the message ``We ride at
+        dawn''.
+
+        \texttt{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+
+        \vspace{-15pt}\hspace{26pt}\texttt{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
+
+\content{
+        \begin{example}
+        The following message was sent to you by a friend, and you know that
+        they used a shift cipher with key 8. What was the original message?
+        
+        \texttt{LWVBFMIBFBPMFNQAP}
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
+
+
+\content{
+        How secure is this method? What should we consider a `secure' method?
+}{% presentation
+}{% nopresentation
+}{% comments
+knowing what encryption scheme is being used should not make it easier to
+decrypt the message
+}
