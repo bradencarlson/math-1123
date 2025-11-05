@@ -1,0 +1,133 @@
+\subsection{Basic Facts About Modular Arithmetic}
+
+\content{
+        \begin{theorem} (Basic facts about modular arithmetic) when $n$ is a
+        natural number, the following are true: 
+        \begin{enumerate}
+        \item $ (a+b)\mod{n} = (a\mod{n}) + (b\mod{n}) $
+        \item $ (ab)\mod{n} = (a\mod{n})(b\mod{n}) $
+        \item $ a^b \mod{n} = (a\mod{n})^b \mod{n} $
+        \end{enumerate}
+        \end{theorem}
+        
+        \begin{example} Compute the following:
+        \begin{enumerate}
+        \item $ 128\cdot 8935 \mod{5} $
+        \item $ 4356^{2532} \mod{4355} $
+        \item $ 4354^{2532} \mod{4355} $
+        \end{enumerate}
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
+
+\content{
+        \begin{example} Compute the following:
+        \begin{enumerate}
+        \item $ 47^{8} \mod{49} $
+        \item $ 65^{5} \mod{35} $
+        \end{enumerate}
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
+
+\content{
+        \begin{example} Your turn! Compute the following:
+        \begin{enumerate}
+        \item $ 12^8 \mod{4} $
+        \item $ 12^8 \mod{5} $
+        \item $ 5^12 \mod{4} $
+        \item $ 98^{123} \mod{99} $
+        \end{enumerate}
+        \end{example}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+        What else can we do with modular arithmetic? 
+
+        \begin{example} Compute each of the following:
+        \begin{enumerate}
+        \item $45^2\mod{20}$
+        \item $(-35)^2\mod{50}$
+        \end{enumerate}
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+Notice that these give the same answer. It turns out that any computation that
+we do involving 45, can instead be done with the number -35, and vice versa.
+These two numbers are said to be equivalent mod 20. What other numbers are
+equivalent to -35 and 45?
+}
+
+\content{
+        \begin{theorem} (Modular Exponent Power Rule) when $n$ is a natural
+        number, we have 
+        $$ (a^b\mod{n})^c\mod{n} = (a^{bc}) \mod{n} = (a^c\mod{n})^b\mod{n}. $$
+        \end{theorem}
+
+        We also note, that when $p$ is a prime number, it is always possible to
+        find a `generator', that is, a number $g$ such that all the powers of
+        $g$ modulo $p$ give all the possible values from 1 to $p-1$. 
+
+        \begin{example} Compute $3^n\mod{7}$ for all values of $n$.
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
+
+\content{
+        We are now ready to describe the key exchange algorithm. 
+        \begin{enumerate}
+        \item Alice and Bob agree publically on values a prime $p$ and generator
+        $g$.
+        \item Alice picks some secret number $a$, while Bob picks some secret
+        number $b$.
+        \item Alice computes $A = g^a \mod{p}$ and sends it to Bob.
+        \item Bob computes $B = g^b \mod{p}$ and sends it to Alice.
+        \item Alice computes $B^a \mod{p}$, which is $(g^b \mod{p})^a \mod{p}$
+        \item Bob computes $A^b \mod{p}$, which is $(g^a \mod{p})^b \mod{p}$
+        \end{enumerate}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+        \begin{example} Suppose that Alice and Bob publicly choose the prime
+        $17$ and generator $3$. What does the exchange look like, and where is
+        their secret key?
+        \end{example}
+}{% presentation
+\vspace{2in}
+}{% nopresentation
+\vspace{2in}
+}{% comments
+}
+
+
+\content{
+        \begin{example} Go through the key exchange algorithm with public
+        values $p=17$ and generator $g=3$.
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
