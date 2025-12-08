@@ -1,0 +1,120 @@
+\subsection{Review of Cryptography}
+
+\content{
+        \begin{example}
+        Use a shift cipher with key 5 to encrypt the message ``The grades are 
+        posted''.
+
+        \texttt{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
+
+        \vspace{-15pt}\hspace{26pt}\texttt{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
+
+\content{
+        \begin{example}
+        Decrypt the following text, using a shift cipher with key 5.        
+
+        \texttt{DTZCINICNY}
+        \end{example}
+}{% presentation
+\vspace{1in}
+}{% nopresentation
+\vspace{1in}
+}{% comments
+}
+
+\content{
+        \begin{example}
+        Encrypt the message ``You should take the final seriously'' using a
+        transposition cipher, and secret key ``study''.
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
+
+\content{
+        \begin{example} The following is an encrypted message using a
+        transposition cipher with secret key ``goalie''. What was the message?
+        
+        \texttt{ntfrin eafsfn leehat tgiaiw}
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
+
+\content{
+        \begin{example}
+        Encrypt the message ``The final is on Thursday'' using a
+        transposition cipher, and secret key ``final''.
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
+
+\content{
+        \begin{example} The following is an encrypted message using a
+        transposition cipher with secret key ``told''. What was the message?
+        
+        \texttt{flehenseavclif hnsylgatiirang}
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
+
+\content{
+        Recall the key exchange algorithm
+        \begin{enumerate}
+        \item Alice and Bob agree publically on values a prime $p$ and generator
+        $g$.
+        \item Alice picks some secret number $a$, while Bob picks some secret
+        number $b$.
+        \item Alice computes $A = g^a \mod{p}$ and sends it to Bob.
+        \item Bob computes $B = g^b \mod{p}$ and sends it to Alice.
+        \item Alice computes $B^a \mod{p}$, which is $(g^b \mod{p})^a \mod{p}$
+        \item Bob computes $A^b \mod{p}$, which is $(g^a \mod{p})^b \mod{p}$
+        \end{enumerate}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+        \begin{example} Suppose that Alice and Bob publicly choose the prime
+        $17$ and generator $3$. What does the exchange look like, and where is
+        their secret key?
+        \end{example}
+}{% presentation
+\vspace{2in}
+}{% nopresentation
+\vspace{2in}
+}{% comments
+}
+
+\content{
+        \begin{example} Your turn! What does the key exchange algorithm look
+        like with $p=19$ and $g=13$?
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
