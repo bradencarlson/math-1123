@@ -4,10 +4,6 @@ These are the lecture notes used for Math 1123 at the University of Idaho.
 Please note that these will change from semester to semester, and do not
 necessarily represent the course contents. 
 
-If you are a student wishing to see the notes from a particular class period,
-you are likely looking for the `pdfs` folder where the actual notes are stored.
-Alternatively, use the links below.
-
 ## Links to Lecture Notes
 
 <details>
