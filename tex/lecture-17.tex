@@ -1,55 +1,201 @@
-\subsection{Positional Systems}
+\subsection{Truth Tables}
 
 \content{
-        As we have noticed, the notion of `position' is extremely valuable, but
-        it took a long time for this idea to develop. Let's discuss some of the
-        basics of what a posisitional system is. 
+\begin{definition} We use the following symbols for conjunction (and),
+disjunction (or), and negation (not): 
+$$ \text{and: } \land,\quad \text{or: }\lor,\quad 
+\text{not: }\neg. $$
+Sometimes you may see the symbol $\sim$ used for negation instead of $\neg$.
+\end{definition}
 }{% presentation
-\vspace{3in}
 }{% nopresentation
-\vspace{3in}
-}{% comments
-Write a number, explain breifly what each position is, this is pretty basic.
-Note that ancient civilizations did not neccesarily use 10 as their base. 
-}
-
-\content{
-        If we choose 8 as our base for a posistional system, what are the values
-        of each position?
-}{% presentation
-\vspace{2in}
-}{% nopresentation
-\vspace{2in}
-}{% comments
-$8^0=1, 8^1=8, 8^2=64, 8^3=512, 8^4=4096,\dots$. 
-}
-
-\content{
-        Write the number $502$ (which is in base 8) in base 10. 
-}{% presentation
-\vspace{2in}
-}{% nopresentation
-\vspace{2in}
-}{% comments
-make a notational note that we will always write non-base 10 numbers with the
-base as a subscript. So this number should be written $502_8$.
-}
-
-\content{
-        Write the number $3324_5$ in base 10. 
-}{% presentation
-\vspace{3in}
-}{% nopresentation
-\vspace{3in}
 }{% comments
 }
 
 \content{
-        Write the number $10101_2$ in base 10. 
+\begin{example} Let $C$ be the statement ``I like Coca-Cola" and $P$ be the
+statement ``I like Pepsi". Write the following in symbols.
+\begin{enumerate}
+\item I like Coke and Pepsi
+\item I like Coke or I like Pepsi
+\item I do not like Coke
+\item I like Coke and I do not like Pepsi
+\end{enumerate}
+\end{example}
 }{% presentation
-\vspace{3in}
+\vspace{1in}
 }{% nopresentation
-\vspace{3in}
 }{% comments
 }
 
+\content{
+\begin{example} Let $R$ be the statement ``This couch is made of leather", and
+$B$ be the statement ``This couch reclines". Write the following in symbols.
+\begin{enumerate}
+\item This couch is made of leather, but it does not recline
+\item This couch is not made of leather, but it relines
+\item This couch does not recline, and is not made of leather
+\end{enumerate}
+\end{example}
+}{% presentation
+\vspace{1in}
+}{% nopresentation
+}{% comments
+}
+
+\content{
+\begin{definition} A \textbf{truth table} is a table showing the value of a
+compound statement for all possible values of the simple statements. 
+\end{definition}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+\begin{example} Construct a truth table for the compound statement $p\land q$.\\
+\begin{tabular}{|c|c|c|}
+\hline
+$p$ & $q$ &\hspace{0.75cm}  \\
+\hline
+T & T &  \\
+\hline
+T & F &  \\
+\hline
+F & T &  \\
+\hline
+F & F &  \\
+\hline
+\end{tabular}
+\end{example}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+\begin{example} Your turn! Construct a truth table for the compound statement
+$p\lor q$.\\
+\begin{tabular}{|c|c|c|}
+\hline
+$p$ & $q$ &\hspace{0.75cm}  \\
+\hline
+T & T &  \\
+\hline
+T & F &  \\
+\hline
+F & T &  \\
+\hline
+F & F &  \\
+\hline
+\end{tabular}
+\end{example}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+\begin{example} Construct a truth table for the compound statement $p\lor \neg
+q$.\\
+\begin{tabular}{|c|c|c|c|}
+\hline
+$p$ & $q$ &\hspace{0.75cm} & \hspace{0.75cm} \\
+\hline
+T & T & & \\
+\hline
+T & F & & \\
+\hline
+F & T & & \\
+\hline
+F & F & & \\
+\hline
+\end{tabular}
+\end{example}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+\begin{example} Construct a truth table for the compound statement 
+$\neg (p\land q)$.\\
+\begin{tabular}{|c|c|c|c|}
+\hline
+$p$ & $q$ &\hspace{0.75cm} & \hspace{0.75cm} \\
+\hline
+T & T & & \\
+\hline
+T & F & & \\
+\hline
+F & T & & \\
+\hline
+F & F & & \\
+\hline
+\end{tabular}
+\end{example}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+\begin{example} Construct a truth table for the compound statement 
+$p\land \neg(q\lor r)$.\\
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$p$ & $q$ & $r$ & \hspace{0.75cm} & \hspace{0.75cm} & \hspace{0.75cm} \\
+\hline
+T & T & T & & & \\
+\hline
+T & T & F & & &\\
+\hline
+T & F & T& & & \\
+\hline
+T & F & F& & &\\
+\hline
+F & T & T & & &\\
+\hline
+F & T & F& & & \\
+\hline
+F & F & T& & &\\
+\hline
+F & F & F& & &\\
+\hline
+\end{tabular}
+\end{example}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+\begin{definition}
+A conditional is a logical compound statement in which a statement $p$, implies
+a statement $q$. This is written $p\Rightarrow q$ (or sometimes $p\rightarrow
+q$). The truth table of the conditional $p\Rightarrow q$ is:\\
+\begin{tabular}{|c|c|c|}
+\hline
+$p$ & $q$ & $p \Rightarrow q$ \\
+\hline
+T & T &  T\\
+\hline
+T & F &  F\\
+\hline
+F & T &  T\\
+\hline
+F & F &  T\\
+\hline
+\end{tabular}
+\end{definition}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+
+}{% presentation
+}{% nopresentation
+}{% comments
+}
