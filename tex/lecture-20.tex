@@ -1,12 +1,27 @@
-\subsection{Intro to Cryptography}
+\subsection{Simple and Compound Interest}
 
 
 \content{
-        In this chapter, we will be assisting Alice and Bob communicate with each
-        other. They are very secretive and do not like their conversations to be
-        known by others. 
+        \begin{definition} (Simple One-time Interest) The interest is only
+        computed once. For example, a small loan which is payed back in full in
+        three months, with some percentage of interest.
+        \end{definition}
+}{% presentation
+\vspace{2in}
+}{% nopresentation
+\vspace{2in}
+}{% comments
+Go over derivation of formulas. We will use $P_0$ to denote the principal (the
+starting amount of a loan or account balance). 
+$$ I = P_0 r $$
+$$ A = P_0 + I = P_0(1+r)$$
+}
 
-        Then there's Eve...
+\content{
+        \begin{example} You lend \$300 dollars to a friend, who agrees to pay
+        the amount back at the end of 3 months with 3\% interest. How much will
+        you make from this? 
+        \end{example}
 }{% presentation
 \vspace{2in}
 }{% nopresentation
@@ -15,77 +30,97 @@
 }
 
 \content{
-        Let's talk about how we might do this for a second. Suppose that you and
-        the person next to you live in different cities (for the purpose of this
-        exercise, we all live in a time where messages must be written down and
-        taken by a courier to wherever they need to go). You are visiting your
-        friend and you decide you want to be able to send secret messages to
-        each other, but you don't trust your couriers not to read your message.
-        How might you decide to make your messages secret?
+        We can generalize the above idea pretty easily. 
+        \begin{definition} (Simple Interest Over Time) If the interest is
+        repeatedly added after a certain amount of time, denoted $t$, and the
+        amount of interest does not change, this is called simple interest over
+        time.
+        \end{definition}
 }{% presentation
-\vspace{3in}
+\vspace{2in}
 }{% nopresentation
-\vspace{3in}
-\newpage
+\vspace{2in}
+}{% comments
+Go over the derivation of formulas $I=P_0rt$, and 
+$$ A = P_0+I=P_0(1+rt).$$
+}
+
+\content{
+        Most of the time, percentage rates are given as an annual percentage
+        rate (APR).
+        \begin{example}
+        Treasury Notes (T-notes) are bonds issued by the federal government to cover its expenses.
+        Suppose you obtain a \$1,000 T-note with a 4\% annual rate, paid
+        semi-annually, reaching maturity in 4 years. How much interest will you earn?
+        \end{example}
+}{% presentation
+\vspace{2in}
+}{% nopresentation
+\vspace{1.5in}
+}{% comments
+Talk about what an APR is here, since most of the examples in this chapter
+will involve this.
+
+$P_0=1000$, $r=0.02$, $t=8$ (8 6-month periods). 
+}
+
+\content{
+    \begin{example} Suppose you obtain a \$1250 T-note with a 3\% APR, paid
+    annually, reaching maturity in 5 years. How much interest will you earn? 
+    \end{example}
+}{% presentation
+\vspace{2in}
+}{% nopresentation
+\vspace{1.5in}
 }{% comments
 }
 
-\subsection{Shift Ciphers}
+\content{
+        \begin{definition} (Compound Interest) When the interest is reinvested
+        and can itself earn interest, this is called compound interest.
+        \end{definition}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{2in}
+}{% comments
+Go over derivation of formula (maybe with concrete numbers instead of
+variables).
+$$ P_m = P_0\left(1+\frac{r}{k}\right)^{n} $$
+where $n$ is the total number of compounds, and $k$ is the number of compounds
+per year. Mention that it is more common to use a formula involving the number
+of years ($n=kt$). 
+
+Mention that this is the formula we use when we deposit money into an account
+and don't deposit any more, we just let it sit there. 
+}
 
 \content{
         \begin{example}
-        A shift cipher is a simple kind of cipher where the alphabet is shifted
-        to obscure the original message. For example, if we choose to use a
-        shift cipher, and our secret key is 3, then we encode messages according
-        to the following: 
-        
-        \texttt{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
-
-        \vspace{-15pt}\hspace{16pt}\texttt{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+        A certificate of deposit (CD) is a savings instrument that many banks offer. It usually gives a
+        higher interest rate, but you cannot access your investment for a specified length of time.
+        Suppose you deposit \$3000 in a CD paying 6\% interest, compounded monthly. How much
+        will you have in the account after 20 years?
         \end{example}
 }{% presentation
 \vspace{3in}
 }{% nopresentation
-\vspace{3in}
+\vspace{2in}
 }{% comments
 }
 
 \content{
-        \begin{example}
-        Use a shift cipher with key 5 to encrypt the message ``We ride at
-        dawn''.
-
-        \texttt{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\
-
-        \vspace{-15pt}\hspace{26pt}\texttt{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+        \newpage
+        \begin{example} 
+        You open a checking account with an APR of 3.5\% by depositing \$1500 at
+        your local bank's branch office. Assuming you don't deposit more money
+        into the account, how much will be in the account in 12 years if
+        interest is compounded once a year? What if interest is compounded each
+        quarter? How about each month? 
         \end{example}
 }{% presentation
-\vspace{3in}
+\vspace{4in}
 }{% nopresentation
 \vspace{3in}
 }{% comments
-}
-
-\content{
-        \begin{example}
-        The following message was sent to you by a friend, and you know that
-        they used a shift cipher with key 8. What was the original message?
-        
-        \texttt{LWVBFMIBFBPMFNQAP}
-        \end{example}
-}{% presentation
-\vspace{3in}
-}{% nopresentation
-\vspace{3in}
-}{% comments
-}
-
-
-\content{
-        How secure is this method? What should we consider a `secure' method?
-}{% presentation
-}{% nopresentation
-}{% comments
-knowing what encryption scheme is being used should not make it easier to
-decrypt the message
 }
