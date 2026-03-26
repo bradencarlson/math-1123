@@ -80,11 +80,11 @@
     \ifpresentation
         \def\argtwo{#2}
         \def\argfour{#4}
-        \begin{minipage}[t]{\mainlength}
-        \vspace{0pt}#1\phantom{#2}{#3}
-        \end{minipage}\hfill\ifx\argfour\empty\else\fbox{\begin{minipage}[t]{\commentlength}
+        \ifx\argfour\empty\else\fbox{\begin{minipage}[t]{\commentlength}
         \vspace{0pt}#4
-        \end{minipage}}\fi
+        \end{minipage}}\fi\hfill\begin{minipage}[t]{\mainlength}
+        \vspace{0pt}#1\phantom{#2}{#3}
+        \end{minipage}
     \else
         #1
         \phantom{#2}{#3}
