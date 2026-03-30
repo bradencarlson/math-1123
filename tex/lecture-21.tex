@@ -1,17 +1,58 @@
-\subsection{Substitution Ciphers}
+\subsection{Annuities}
 
 
 \content{
-        Last time we talked about shift ciphers, and determined that they are
-        not very secure (there are only 26 possible secret keys). What if
-        instead we choose some random mapping, like the following
+        Formulas so far: \\
+        \fbox{\begin{minipage}{\textwidth}
+        For these formulas, we have the following: 
+        \begin{itemize}
+        \item $P_0$ is the pricipal. 
+        \item $r$ is the interest rate. 
+        \item $t$ is the number of time intervals (specified by problem) which
+        have passed. 
+        \item $A$ is the amount paid back.
+        \item $I$ is the interest.
+        \end{itemize}
+        \begin{center}
+        \begin{tabular}{|c|c|}
+        \hline
+        Simple Interest & \begin{minipage}[t!]{1.5in} \begin{eqnarray*} I=P_0r \\
+                A = P_0(1+r)\end{eqnarray*}\end{minipage} \\
+        \hline
+        Simple Interest over Time & \begin{minipage}{1.5in} \begin{eqnarray*}
+        I=P_0rt \\ A = P_0(1+rt) \end{eqnarray*}\end{minipage}\\
+        \hline
+        \end{tabular}
+        \end{center}
+        \end{minipage}}
+        \fbox{\begin{minipage}{\textwidth}
+        For these formulas, we have the following: 
+        \begin{itemize}
+        \item $P_0$ is the pricipal. 
+        \item $r$ is the annual interest rate.
+        \item $t$ is the number of years which have passed. 
+        \item $A$ is the total amount.
+        \item $k$ is the number of times interest is compounded per year. 
+        \end{itemize}
+        \begin{center}
+        \begin{tabular}{|c|c|}
+        \hline
+        Compound Interest & \begin{minipage}{1.5in}$$ A =
+        P_0\left(1+\frac{r}{k}\right)^{kt} $$\end{minipage}\\
+        \hline
+        \end{tabular}
+        \end{center}
+        \end{minipage}}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
 
-        \texttt{ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789}
-
-        \texttt{2BQF5WRTD8IJ6HLCOSUVK3A0X9YZN1G4ME7P}
-
-        \begin{example} Under the above substitution cipher, what is the
-        ciphertext for the message: ``March 12 0300''
+\content{
+        \begin{example} You will need \$40,000 for your childs education in 18
+        years. You open a new savings account with a 4\% APR compounded
+        quarterly. How much will you need to invest into the account now to have
+        enough money when your child is 18?
         \end{example}
 }{% presentation
 \vspace{2in}
@@ -21,24 +62,40 @@
 }
 
 \content{
-        \begin{example} What are the secret keys for a substitution cipher, and
-        how many secret keys are there? 
-        \end{example}
+        \newpage
+        \begin{definition} (Savings Annuity) Placing a small amount in an
+        account each month to slowly build up savings instead of placing a large
+        sum to begin with.
+        \end{definition}
 }{% presentation
-\vspace{2in}
+\vspace{4in}
 }{% nopresentation
-\vspace{2in}
+\vspace{4in}
 }{% comments
-Unfortunately, this method is still not secure, due to frequency analysis (and
-even frequency analysis with pairs of letters).
-}
+Go over derivation: 
+\begin{enumerate}
+\item DEFINE $r=APR$, $k$ - number of compounds per year. $d$ the deposit
+amount.
+\item Write recursive formula for $P_m$, where $m$ is the number of compounds
+that have occured. 
+\item Expand, and write two of these
+\item multiply second one by $(1+r/k)$ then subtract to simplify. 
+\end{enumerate}
+Final formula 
+$P_m = d \frac{\left(\left(1+\frac{r}{k}\right)^m-1\right)}{\frac{r}{k}} $
+one last step, $m=tk$, where $t$ is the number of years that have passed. 
 
-\subsection{Transposition Ciphers}
+\textbf{Note:} in this formula we assume that we make a deposit once every time
+the interest is compounded, so if there is a problem where the number of
+compounds per year is not stated, just use the number of deposits per year for
+$k$. 
+}
 
 \content{
-        \begin{example}
-        Encrypt the message ``Meet at first and pine at midnight'' using a
-        transposition cipher, and secret key ``help''.
+        \begin{example} Suppose you create an individual
+        retirement account (IRA) with a 6\% APR which is compounded monthly.
+        Each month you deposit \$100 into the account. How much will be in the
+        account in 20 years? 
         \end{example}
 }{% presentation
 \vspace{3in}
@@ -48,10 +105,10 @@ even frequency analysis with pairs of letters).
 }
 
 \content{
-        \begin{example} The following is an encrypted message using a
-        transposition cipher with secret key ``train''. What was the message?
-        
-        \texttt{RRSOGRANEI TZAAEOTTVN}
+        \begin{example} You want to have \$200,000 in your account when you 
+        retire in 30 years. Your retirement account earns 8\% interest. 
+        How much do you need to deposit each month to meet your
+        retirement goal?
         \end{example}
 }{% presentation
 \vspace{3in}
@@ -59,26 +116,31 @@ even frequency analysis with pairs of letters).
 \vspace{3in}
 }{% comments
 }
-
-\subsection{Advanced shared symmetric-key methods}
-
 
 \content{
-        Each method so far has been insecure due to frequency analysis. The next
-        method gets around that vulnerability.
-
-        \begin{example} Consider an encryption method using a shift cipher, but
-        after each letter is encrypted, the shift is changed by some known
-        amount. The secret key in this system is then the starting shift amount,
-        and how the shift changes between each letter. Let's see an example,
-        where the shift changed by +1 after each letter. Encrypt the phrase "See
-        me". 
-
-        \texttt{ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789}
-
-        \texttt{2BQF5WRTD8IJ6HLCOSUVK3A0X9YZN1G4ME7P}
+        \begin{example} You open a new bank account with a 3\% APR, compounded
+        daily, and each day you deposit \$10 into it. How much will you have in
+        the account in 10 years? 
         \end{example}
 }{% presentation
+\vspace{3in}
 }{% nopresentation
+\vspace{3in}
 }{% comments
 }
+
+\content{
+        \begin{example} You want to have \$10,000 dollars saved in a special
+        savings account for a trip in 3 years. The account has a 2.5\% APR
+        compounded twice a month. If you plan on depositing money into the
+        account twice a month, how much will you need to deposit to reach your
+        goal? 
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
+
+
