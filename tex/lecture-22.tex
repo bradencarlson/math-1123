@@ -1,84 +1,69 @@
-\subsection{Public Key Cryptography}
-
-\subsubsection{Key Exchange}
+\subsection{Payout Annuities}
 
 
 \content{
-        Up to this point every method of sending an encrypted message requires a
-        secret key known to both Alice and Bob. A big problem in cryptography is
-        the following: 
+        Formulas so far: \\
+        \fbox{\begin{minipage}{\textwidth}
+        For these formulas, we have the following: 
+        $P_0$ is the pricipal. 
+        $r$ is the interest rate. 
+        $t$ is the number of time intervals (specified by problem) which
+        have passed. 
+        $A$ is the amount paid back.
+        $I$ is the interest.
 
-        Suppose that Alice and Bob are unable to meet in person, they have to
-        email each other to agree on the secret key.  Unfortunatly, Eve has
-        access to Alice's emails, and thus can read any emails that are sent
-        between Alice and Bob. How can Alice and Bob decide on a secret key
-        without the key falling into Eve's hands? 
+        \begin{center}
+        \begin{tabular}{|c|c|}
+        \hline
+        \T\B Simple Interest &  $ A = P_0(1+r) $ \\
+        \hline
+        \T\B Simple Interest over Time & $  A = P_0(1+rt) $ \\
+        \hline
+        \end{tabular}
+        \end{center}
+        \end{minipage}}
+        \fbox{\begin{minipage}{\textwidth}
+        For these formulas, we have the following: 
+        $P_0$ is the pricipal. 
+        $r$ is the annual interest rate.
+        $t$ is the number of years which have passed. 
+        $A$ is the total amount.
+        $k$ is the number of times interest is compounded per year. 
+
+        \begin{center}
+        \begin{tabular}{|c|c|}
+        \hline
+        \T\B Compound Interest & $ A =
+        P_0\left(1+\frac{r}{k}\right)^{kt} $ \\
+        \hline
+        \T\B Savings Annuity & $ A =
+        d\frac{\left(\left(1+\frac{r}{k}\right)^{kt}-1\right)}{\frac{r}{k}} $\\
+        \hline
+        \end{tabular}
+        \end{center}
+        \end{minipage}}
 }{% presentation
-\newpage
 }{% nopresentation
-\vspace{3in}
 }{% comments
-We need some `one-way function' that is easy to compute, but hard to undo. 
-
-Illustrate how this can be done with the paint mixing example. In this example,
-the secret key is the final paint color. 
-
-Of course, since Alice and Bob are using computers, the one-way function will
-need to be a numerical function. 
 }
 
-\subsubsection{Modular Arithmetic}
-
 \content{
-        What is modular arithmetic? 
-}{% presentation
-\vspace{3in}
-}{% nopresentation
-\vspace{3in}
-}{% comments
-Do clock example. $8+5 \text{"="} 1$, we will write this as $8+5\equiv 1 \mod{12}$.
-}
-
-\content{
-        \begin{definition} The \textbf{modulus} is another name for the
-        remainder after division.
+        \begin{definition} (Payout Annuities) A payout annuity is when you have
+        some amount of money in an account, and you make regular deposits from
+        it, leaving the rest to earn interest. The formula is as follows.
+        $$ P_0 =
+        d\frac{\left(1-\left(1+\frac{r}{k}\right)^{-kt}\right)}{\frac{r}{k}} $$
         \end{definition}
 }{% presentation
-\vspace{2in}
 }{% nopresentation
-\vspace{2in}
 }{% comments
 }
 
 \content{
-        \begin{example} Compute 
-        \begin{enumerate}
-        \item $ 15 \mod{7}$
-        \item $ 125 \mod{43}$
-        \item $ 5 \mod{20}$
-        \item $ -12 \mod{7}$
-        \item $ 2^7 \mod{5}$
-        \end{enumerate}
-        \end{example}
-}{% presentation
-\vspace{3in}
-}{% nopresentation
-\vspace{3in}
-}{% comments
-Note that will always write our final answer as a natural number between 0 and
-$n-1$.
-}
-
-\content{
-        \begin{example} Your turn! Compute the following
-        \begin{enumerate}
-        \item $ 123 \mod{19} $
-        \item $ 65 \mod{12} $
-        \item $ -923 \mod{134} $
-        \item $ -124 \mod{543} $
-        \item $ 1045 \mod{521} $
-        \item $ 8324 \mod{358}$
-        \end{enumerate}
+        \begin{example} After retiring, you want to be able to take \$1000 every month for a total of 20 years from
+        your retirement account. The account earns 6\% interest. How much will you need in your
+        account when you retire? How much will you withdraw from the account
+        total? How much of that money is interest? 
         \end{example}
 }{% presentation
 \vspace{3in}
@@ -87,3 +72,53 @@ $n-1$.
 }{% comments
 }
 
+\content{
+        \begin{example} (Negative Exponents on a Calculator) Depending on your
+        calculator, the steps which are needed to calculate something like
+        $1.005^{-240}$ may differ.
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+Let's all just agree to always use parenthesis around all negative exponenets,
+just to be safe.
+}
+
+\content{
+        \begin{example} You know you will have \$500,000 in your account when you retire. You want to be able to
+        take monthly withdrawals from the account for a total of 30 years. Your retirement account
+        earns 8\% interest. How much will you be able to withdraw each month?
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
+
+\content{
+        \begin{example} A donor gives \$100,000 to a university, and specifies that it is to be used to give annual
+        scholarships for the next 20 years. If the university can earn 4\% interest, how much can they
+        give in scholarships each year?
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
+
+\content{
+        \begin{example} How much money will I need to have at retirement so I
+        can withdraw \$60,000 a year for 20 years from an account earning 8\% 
+        compounded annually? How much money will be withdrawn from the account?
+        How much of that money is interest? 
+        \end{example}
+}{% presentation
+\vspace{4in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
