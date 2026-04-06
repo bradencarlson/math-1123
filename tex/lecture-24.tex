@@ -1,32 +1,55 @@
-\subsection{Modular Arithmetic Continued}
+\subsection{Payday Loans and Credit Cards}
+
+\subsubsection{Credit Cards}
 
 \content{
-        Let's review what we have learned so far.
+        \begin{example} Credit cards usually compound interest daily. Suppose
+        that you owe \$1000 on a credit card with a 25\% APR. You make a payment
+        of \$100 (after interest is compounded for the month). How much will you
+        still owe the bank? (Assume each month has exactly 30 days)
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+Use the compount interest formula, where the exponent is just 30. This might
+take some explaining.
+}
+
+\content{
+        \begin{example} Suppose that you owe \$1000 on a credit card with 28\%
+        APR, and the minimum payment each month is \$50, additionally assume
+        that you make no additional purchases (not a very realistic assumption,
+        I know, but let's make this simple for ourselves).
+        How much will we owe the bank after 3 months? 
+        \end{example}
 }{% presentation
 \vspace{4in}
 }{% nopresentation
 \vspace{4in}
 }{% comments
-\begin{enumerate}
-\item Start with definition of modular arithmetic. 
-\item Go over addition example, show that any number which has the same
-remainder can be used in a numbers place
-\item Go over multiplication example, same thing
-\item Go over exponentiaion example, same thing.
-\end{enumerate}
 }
 
 \content{
-        \begin{theorem} (Modular Exponent Power Rule) when $n$ is a natural
-        number, we have 
-        $$ (a^b\mod{n})^c\mod{n} = (a^{bc}) \mod{n} = (a^c\mod{n})^b\mod{n}. $$
-        \end{theorem}
+        \begin{example} Let's go the computer for this one. In the above
+        situation from the previous example, how long will it take us to pay off
+        the bank? How much do we pay? 
+        \end{example}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
 
-        We also note, that when $p$ is a prime number, it is always possible to
-        find a `generator', that is, a number $g$ such that all the powers of
-        $g$ modulo $p$ give all the possible values from 1 to $p-1$. 
+\subsubsection{Payday Loans}
 
-        \begin{example} Compute $3^n\mod{7}$ for all values of $n$.
+\content{
+        \begin{example} Payday loans are short-term loans where the interest is
+        calculated up front. Consider the following example. You need \$400
+        dollars to make rent, but don't get paid for another two weeks. You
+        decide to take out a payday loan, and the lender charges \$15 dollars
+        interest for every \$100 dollars borrowed. How much interest will you
+        pay if you pay back the loan on time? What is the APR of this loan?
         \end{example}
 }{% presentation
 \vspace{3in}
@@ -35,54 +58,4 @@ remainder can be used in a numbers place
 }{% comments
 }
 
-\content{
-        We are now ready to describe the key exchange algorithm. 
-        \begin{enumerate}
-        \item Alice and Bob agree publically on values a prime $p$ and generator
-        $g$.
-        \item Alice picks some secret number $a$, while Bob picks some secret
-        number $b$.
-        \item Alice computes $A = g^a \mod{p}$ and sends it to Bob.
-        \item Bob computes $B = g^b \mod{p}$ and sends it to Alice.
-        \item Alice computes $B^a \mod{p}$, which is $(g^b \mod{p})^a \mod{p}$
-        \item Bob computes $A^b \mod{p}$, which is $(g^a \mod{p})^b \mod{p}$
-        \end{enumerate}
-}{% presentation
-}{% nopresentation
-}{% comments
-}
 
-\content{
-        \begin{example} Suppose that Alice and Bob publicly choose the prime
-        $17$ and generator $3$. What does the exchange look like, and where is
-        their secret key?
-        \end{example}
-}{% presentation
-\vspace{2in}
-}{% nopresentation
-\vspace{2in}
-}{% comments
-}
-
-
-\content{
-        \begin{example} Go through the key exchange algorithm with public
-        values $p=17$ and generator $g=3$.
-        \end{example}
-}{% presentation
-\vspace{3in}
-}{% nopresentation
-\vspace{3in}
-}{% comments
-}
-
-\content{
-        \begin{example} Your turn! What does the key exchange algorithm look
-        like with $p=19$ and $g=13$?
-        \end{example}
-}{% presentation
-\vspace{3in}
-}{% nopresentation
-\vspace{3in}
-}{% comments
-}
