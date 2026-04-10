@@ -1,76 +1,176 @@
-\subsection{RSA Algorithm}
-
-
-\content{
-        \begin{example} Compute the following: 
-        \begin{enumerate}
-        \item $ 3^9 \mod{15} $
-        \item $ 2^9 \mod{15} $
-        \item $ 9^9 \mod{15} $
-        \item $14^9 \mod{15} $
-        \end{enumerate}
-        \end{example}
-}{% presentation
-\vspace{3in}
-}{% nopresentation
-\vspace{3in}
-}{% comments
-}
+\subsection{Populations and Samples}
 
 \content{
-        \begin{example} What might we do with the above observation? 
-        \end{example}
-        \newpage
+        \begin{center}
+        \begin{minipage}{0.8\textwidth}
+        ``There are three kinds of lies -- lies, damned lies, and statistics." \\
+        \vspace{-3pt}\par\hfill (British Prime Minister Benjamin Disraeli)
+        \end{minipage}
+        \end{center}
 }{% presentation
 }{% nopresentation
 }{% comments
-Factor 9 into 3 and 3, then notice that this gives rise to a 2-step process, we
-could compute $b = a^3 \mod{15}$, then $c = b^3 \mod{15}$, but then
-$c=a^9\mod{15} = a \mod{15}$. So we can recover what $a$ was. 
 }
 
+
 \content{
-        \begin{definition} (RSA Algorithm) Each party wishing to communicate
-        does the following:
-        \begin{enumerate}
-        \item Pick two prime numbers, $p$ and $q$. 
-        \item Compute $n=p*q$.
-        \item Compute $\phi(n) = (p-1)*(q-1)$
-        \item Pick a public key $e$ satisfying $\gcd(e,\phi(n)) = 1$.
-        \item Find $d$ such that $d*e \equiv 1\mod{\phi(n)}$.
-        \item Publish $e$ and $n$ as public keys. 
-        \item Guard $p$, $q$, and $\phi(n)$ as secret, and keeps $d$ secret as a
-        secret key.
-        \end{enumerate}
+        \begin{definition} The \textbf{population} of study is the group the collected
+        data is intended to describe.
         \end{definition}
 
-        \textbf{Question:} What makes this secure? What step is hard to compute
-        without the secret keys? 
+        It is important to specify the population because our conclusions make
+        from the data could differ based on the population we wish to study. 
 }{% presentation
-\vspace{2in}
+\vspace{1in}
 }{% nopresentation
-\vspace{2in}
+\vspace{1in}
 }{% comments
+Sometimes known as the target population, since a poorly designed study could
+fail to represent the true population.
 }
 
 \content{
-        \begin{example} Encrypt the word ``help'' using the RSA algorithm
-        $n=3551$, $e=629$, and $d=1997$.
+        \begin{example} Suppose we wish to study the average amount of money
+        spent on textbooks for first-year college students. The population we
+        wish to study might be any of the following: 
+        \begin{itemize}
+        \item First year students at the University of Idaho.
+        \item First year students at any university in Idaho.
+        \item First year students at any community college in Idaho.
+        \item First year students at any community college in the USA.
+        \item Etc.
+        \end{itemize}
+        Maybe there is a class at the university of Idaho which requires a
+        particularly expensive textbook, which could skew our conclusion about
+        the population if the target population is first year students at 
+        universities in the USA.
         \end{example}
 }{% presentation
-\vspace{4in}
 }{% nopresentation
-\vspace{4in}
 }{% comments
 }
 
 \content{
-        Ok... no more hand calculations for this lecture! Current best practices
-        recommend a key length of at least 2048 bits, that means that $n$ should
-        be a number with around 617 digits! Let's see a few examples with a
-        computer.
+        \begin{definition} If we are able to gather data on every single member
+        of the population, any value computed using all the data is called a 
+        \textbf{parameter}.
+        \end{definition}
 }{% presentation
 }{% nopresentation
 }{% comments
-Go to website, and see some examples of how this looks with larger primes. 
+}
+
+\content{
+        \begin{definition} A survey of the entire population is called a
+        \textbf{census}
+        \end{definition}
+        You are probably familiar with a few common censuses: the United States
+        Census, and voting.
+}{% presentation
+\vspace{1in}
+}{% nopresentation
+}{% comments
+voting in particular shows the difficulty in surveying the entire population:
+some may not answer the survey.
+}
+
+\content{
+        \begin{definition} A \textbf{sample} is a subset of the population,
+        ideally one that is a good representation of the population.
+        \end{definition}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+        \begin{example}
+        A researcher wanted to know how citizens of Tacoma felt about a 
+        voter initiative.  To study  this, she goes to the Tacoma Mall 
+        and randomly selects 500 shoppers and asks them their  opinion.  
+        60\% indicate they are supportive of the initiative.  What is the 
+        sample and  population?  Is the 60\% value a parameter or a statistic?
+        \end{example}
+}{% presentation
+\vspace{1in}
+}{% nopresentation
+\vspace{1in}
+}{% comments
+Note that the effective population was mall shoppers, and there is no reason to
+believe that this is a representative sample of the target population.
+}
+
+\subsection*{Categorizing Data}
+
+
+\content{
+        \begin{definition} \textbf{Categorical (qualitative) data} are pieces of
+        information that allow us to classify the objects under investigation
+        into categories.
+
+        \textbf{Quantitative data} are responses that are numerical in nature
+        that allow us to perform meaningful calculations.
+        \end{definition}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+
+\content{
+        \begin{example} Suppose we put out a survey asking how many movies
+        people have watched in the last year. What kind of data is this? 
+        \end{example}
+}{% presentation
+\vspace{1in}
+}{% nopresentation
+\vspace{1in}
+}{% comments
+}
+
+\content{
+        \begin{example} Suppose we ask people what ZIP code they live in. What
+        kind of data is this? 
+        \end{example}
+}{% presentation
+\vspace{1in}
+}{% nopresentation
+\vspace{1in}
+}{% comments
+}
+
+\subsection*{Sampling Methods}
+
+\content{
+        \begin{example} Suppose we are hired by a politician to determine how
+        much support they would have if they decided to run for another term? 
+        As always, the first step is identifying the population.\\
+        The next step is to take a sample of the population. How do we do this?
+        \end{example}
+}{% presentation
+\vspace{2in}
+}{% nopresentation
+\vspace{1.5in}
+}{% comments
+All people in area? All voters? All registered voters? All likely voters? This
+last one is what is commonly used, but it can still fail.
+
+In 1998, former professional wrestler Jesse Ventura was elected governor of
+Minnesota.  Polls before the election consistently showed that he had little
+chance of winning. One big factor of why this happened was because polls omitted
+younger voters, since they were not considered likely voters. Since he had a lot
+of support in this group, the polls were not accurate. 
+
+This kind of situation is known as sampling bias, and it can be difficult to
+avoid. In this example, the polls omitted a key group from their data, and so
+the sample was not a good representation of the target population.
+}
+
+\content{
+        \begin{definition} A sampling method is called \textbf{biased} is every member
+        of the population doesn't have equal likelihood of being in the sample.
+        \end{definition}
+}{% presentation
+}{% nopresentation
+}{% comments
 }
