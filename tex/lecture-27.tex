@@ -1,0 +1,243 @@
+\subsection{Describing and Summarizing Data}
+
+
+\content{
+        Let us start by finding a description of the ``middle" of a dataset.
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+        \begin{definition} The \textbf{mean} of a set of data is the sum the data values divided by the number of  values. 
+        \end{definition}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+        \begin{example} Marci’s exam scores for her last math class were:  79,
+        86, 82, 94. Find the mean of her exam scores.
+        \end{example}
+}{% presentation
+\vspace{2in}
+}{% nopresentation
+\vspace{1.5in}
+}{% comments
+}
+
+\content{
+        \begin{example} The number of touchdown (TD) passes thrown by each of the 31 teams in the National  
+        Football League in the 2000 season are shown below.       
+        $$ \{37,33,33,32,29,28,28,23,22,22,22,21,21,21,20,20,19,19,18,18,18,18,16,
+        15,14,14,14,12,12,9,6\} . $$
+        \end{example}
+}{% presentation
+\vspace{2in}
+}{% nopresentation
+\vspace{1.5in}
+}{% comments
+The total is 634, average is 20.45.
+}
+
+\content{
+        \begin{example} The one hundred families in a particular neighborhood
+        are asked their annual household  income, to the nearest \$5 thousand dollars.
+        The results are summarized in a frequency table  below.  \\
+        \begin{tabular}{|c|c|}
+        \hline
+        Income & Frequency \\
+        \hline
+        15 & 6 \\
+        20 & 8 \\
+        25 & 11 \\
+        30 & 17 \\
+        35 & 19 \\
+        40 & 20 \\
+        45 & 12 \\
+        50 & 7\\
+        \hline
+        \end{tabular}\\
+        Find the mean annual income for the neighborhood.
+        \end{example}
+}{% presentation
+\vspace{2in}
+}{% nopresentation
+\vspace{2in}
+}{% comments
+Use the fact that we have the frequencies to compute a sort of ``weighted mean",
+which is 33.9
+}
+
+\content{
+        \begin{example} Suppose that a new family moves into the neighborhood
+        with an income of \$5 million, what is the new mean? 
+        \end{example}
+}{% presentation
+\vspace{2in}
+}{% nopresentation
+\vspace{2in}
+}{% comments
+}
+
+\content{
+        \begin{definition} An \textbf{outlier} is a data point which lies ``far"
+        from the other data points (we will give a better definition of this
+        later)
+        \end{definition}
+        When our data contains outliers, it is often better to measure the
+        ``center" of our data using the median: 
+        \begin{definition} The \textbf{median} of a set of data is the value in
+        the middle of the \textit{ordered} data.
+        \end{definition}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+        \begin{example} Find the median of the following data set: 
+        $$ \{5,3,7,9,2,5,10,11,4,2,6,6,1\} $$
+        \end{example}
+}{% presentation
+\vspace{2in}
+}{% nopresentation
+\vspace{2in}
+}{% comments
+Write out the formulas for which data point we need: 
+$$ \frac{N+1}{2} $$
+notice that when $N$ is even, this means we need to take an average of two data
+points. 
+}
+
+\content{
+        \begin{example} Let's revisit the income example, which contained the
+        outlier.\\
+        \begin{tabular}{|c|c|}
+        \hline
+        Income & Frequency \\
+        \hline
+        15 & 6 \\
+        20 & 8 \\
+        25 & 11 \\
+        30 & 17 \\
+        35 & 19 \\
+        40 & 20 \\
+        45 & 12 \\
+        50 & 7 \\
+        5000 & 1\\
+        \hline
+        \end{tabular}\\
+        Find the median annual income for the neighborhood.
+        \end{example}
+}{% presentation
+\vspace{2in}
+}{% nopresentation
+\vspace{1in}
+}{% comments
+}
+
+\content{
+        \begin{example} Find the median of the following data set: 
+        $$ \{3,1,5,8,3,2,2,5,4,0,1,1,4\}. $$
+        \end{example}
+}{% presentation
+\vspace{2in}
+}{% nopresentation
+\vspace{2in}
+}{% comments
+}
+
+\content{
+        We will next describe how ``spread out" the data is.
+
+        \begin{definition} The standard deviation is a measure of how far data
+        points are from the mean, it has a few important qualities: 
+        \begin{enumerate}
+        \item It is always positive, and is only zero if all the data is the
+        same.
+        \item It has the same units as the original data.
+        \item It can be highly influenced by outliers, just like the mean.
+        \end{enumerate}
+        \end{definition}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+        \begin{definition} To compute the standard deviation: 
+        \begin{enumerate}
+        \item Calculate the mean of the data.
+        \item Compute the difference of each data point and the mean.
+        \item Square the differences.
+        \item Compute the mean of the squares*.
+        \item Take a square root
+        \end{enumerate}
+        *Unless the data represents a population, we divide by $N-1$ instead of
+        $N$.
+        \end{definition}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+        \begin{example} Marci’s exam scores for her last math class were:  79,
+        86, 82, 94. Find the mean of her exam scores, then find the standard
+        deviation.
+        \end{example}
+}{% presentation
+\vspace{2in}
+}{% nopresentation
+\vspace{1in}
+}{% comments
+}
+
+\content{
+        \begin{example} The price of a jar of peanut butter at 5 stores were:
+        \$3.29, \$3.59, \$3.79, \$3.75, and \$3.99.   Find the standard deviation of
+        the prices.
+        \end{example}
+}{% presentation
+\vspace{2in}
+}{% nopresentation
+\vspace{2in}
+}{% comments
+}
+
+\content{
+        \begin{definition} An \textbf{outlier} is a data point which lies more
+        than 2 standard deviations away from the mean.
+        \end{definition}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+        \begin{example} Let's revisit the income example.\\
+        \begin{tabular}{|c|c|}
+        \hline
+        Income & Frequency \\
+        \hline
+        15 & 6 \\
+        20 & 8 \\
+        25 & 11 \\
+        30 & 17 \\
+        35 & 19 \\
+        40 & 20 \\
+        45 & 12 \\
+        50 & 7 \\
+        5000 & 1\\
+        \hline
+        \end{tabular}\\
+        Identify any outliers in this data.
+        \end{example}
+}{% presentation
+\vspace{2in}
+}{% nopresentation
+\vspace{1in}
+}{% comments
+}
