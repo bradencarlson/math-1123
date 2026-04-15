@@ -1,62 +1,61 @@
-\subsection{Review of Finance (Cont.)}
+\subsection{Modular Arithmetic Continued}
 
 \content{
-        Formulas so far: \\
-        \fbox{\begin{minipage}{\textwidth}
-        For these formulas, we have the following: 
-        $P_0$ is the principal. 
-        $r$ is the interest rate. 
-        $t$ is the number of time intervals (specified by problem) which
-        have passed. 
-        $A$ is the amount paid back.
-        $I$ is the interest.
+        Let's review what we have learned so far.
+}{% presentation
+\vspace{4in}
+}{% nopresentation
+\vspace{4in}
+}{% comments
+\begin{enumerate}
+\item Start with definition of modular arithmetic. 
+\item Go over addition example, show that any number which has the same
+remainder can be used in a numbers place
+\item Go over multiplication example, same thing
+\item Go over exponentiaion example, same thing.
+\end{enumerate}
+}
 
-        \begin{center}
-        \begin{tabular}{|c|c|}
-        \hline
-        \T\B Simple Interest &  $ A = P_0(1+r) $ \\
-        \hline
-        \T\B Simple Interest over Time & $  A = P_0(1+rt) $ \\
-        \hline
-        \end{tabular}
-        \end{center}
-        \end{minipage}}
-        \fbox{\begin{minipage}{\textwidth}
-        For these formulas, we have the following: 
-        $P_0$ is the principal, or amount of a loan. 
-        $r$ is the annual interest rate.
-        $t$ is the number of years which have passed. 
-        $A$ is the total amount.
-        $k$ is the number of times interest is compounded per year. 
-        $d$ is the amount we deposit (or withdraw) from the account regularly,
-        or the payment amount on a loan.
+\content{
+        \begin{theorem} (Modular Exponent Power Rule) when $n$ is a natural
+        number, we have 
+        $$ (a^b\mod{n})^c\mod{n} = (a^{bc}) \mod{n} = (a^c\mod{n})^b\mod{n}. $$
+        \end{theorem}
 
-        \begin{center}
-        \begin{tabular}{|c|c|}
-        \hline
-        \T\B Compound Interest & $ A =
-        P_0\left(1+\frac{r}{k}\right)^{kt} $ \\
-        \hline
-        \T\B Savings Annuity & $ A =
-        d\frac{\left(\left(1+\frac{r}{k}\right)^{kt}-1\right)}{\frac{r}{k}} $\\
-        \hline
-        \T\B Payout Annuity/Loans & $P_0 =
-        d\frac{\left(1-\left(1+\frac{r}{k}\right)^{-kt}\right)}{\frac{r}{k}}$ \\
-        \hline
-        \end{tabular}
-        \end{center}
-        \end{minipage}}
+        We also note, that when $p$ is a prime number, it is always possible to
+        find a `generator', that is, a number $g$ such that all the powers of
+        $g$ modulo $p$ give all the possible values from 1 to $p-1$. 
+
+        \begin{example} Compute $3^n\mod{7}$ for all values of $n$.
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
+
+\content{
+        We are now ready to describe the key exchange algorithm. 
+        \begin{enumerate}
+        \item Alice and Bob agree publically on values a prime $p$ and generator
+        $g$.
+        \item Alice picks some secret number $a$, while Bob picks some secret
+        number $b$.
+        \item Alice computes $A = g^a \mod{p}$ and sends it to Bob.
+        \item Bob computes $B = g^b \mod{p}$ and sends it to Alice.
+        \item Alice computes $B^a \mod{p}$, which is $(g^b \mod{p})^a \mod{p}$
+        \item Bob computes $A^b \mod{p}$, which is $(g^a \mod{p})^b \mod{p}$
+        \end{enumerate}
 }{% presentation
 }{% nopresentation
 }{% comments
 }
 
 \content{
-        \begin{example}
-        Marcy received an inheritance of \$20,000, and invested it at 6\% interest. She is
-        going to use it for college, withdrawing money for tuition and expenses each
-        quarter. How much can she take out each quarter if she has 3 years of school
-        left?        
+        \begin{example} Suppose that Alice and Bob publicly choose the prime
+        $17$ and generator $3$. What does the exchange look like, and where is
+        their secret key?
         \end{example}
 }{% presentation
 \vspace{2in}
@@ -65,68 +64,25 @@
 }{% comments
 }
 
+
 \content{
-        \begin{example}
-        Paul wants to buy a new car. Rather than take out a loan, he decides to save
-        \$200 a month in an account earning 3\% interest compounded monthly. How
-        much will he have saved up after 3 years?        
+        \begin{example} Go through the key exchange algorithm with public
+        values $p=17$ and generator $g=3$.
         \end{example}
 }{% presentation
-\vspace{2in}
+\vspace{3in}
 }{% nopresentation
-\vspace{2in}
+\vspace{3in}
 }{% comments
 }
 
 \content{
-        \begin{example}
-        Keisha is managing investments for a non-profit company. They want to invest
-        some money in an account earning 5\% interest compounded annually with the
-        goal to have \$30,000 in the account in 6 years. How much should Keisha
-        deposit into the account?        
+        \begin{example} Your turn! What does the key exchange algorithm look
+        like with $p=19$ and $g=13$?
         \end{example}
 }{% presentation
-\vspace{2in}
+\vspace{3in}
 }{% nopresentation
-\vspace{2in}
-}{% comments
-}
-
-\content{
-        \begin{example}
-        Miao is going to finance new office equipment at a 2\% rate over a 4 year term.
-        If she can afford monthly payments of \$100, how much new equipment can she
-        buy?        
-        \end{example}
-}{% presentation
-\vspace{2in}
-}{% nopresentation
-\vspace{2in}
-}{% comments
-}
-
-\content{
-        \begin{example}
-        How much would you need to save every month in an account earning 4\%
-        interest to have \$5,000 saved up in two years?        
-        \end{example}
-}{% presentation
-\vspace{2in}
-}{% nopresentation
-\vspace{2in}
-}{% comments
-}
-
-\content{
-        \begin{example}
-        A friend asks for a small loan of \$100 and agrees to pay it back with
-        10\% interest in a week. For each week that goes by without payment,
-        another \$10 is added to what they owe you. Assuming that they don't pay
-        you back for four weeks, how much will they owe you? 
-        \end{example}
-}{% presentation
-\vspace{2in}
-}{% nopresentation
-\vspace{2in}
+\vspace{3in}
 }{% comments
 }

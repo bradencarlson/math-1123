@@ -1,141 +1,20 @@
-\subsection{Review of Finance}
+\subsection{Basic Facts About Modular Arithmetic}
 
 \content{
-        Formulas so far: \\
-        \fbox{\begin{minipage}{\textwidth}
-        For these formulas, we have the following: 
-        $P_0$ is the principal. 
-        $r$ is the interest rate. 
-        $t$ is the number of time intervals (specified by problem) which
-        have passed. 
-        $A$ is the amount paid back.
-        $I$ is the interest.
-
-        \begin{center}
-        \begin{tabular}{|c|c|}
-        \hline
-        \T\B Simple Interest &  $ A = P_0(1+r) $ \\
-        \hline
-        \T\B Simple Interest over Time & $  A = P_0(1+rt) $ \\
-        \hline
-        \end{tabular}
-        \end{center}
-        \end{minipage}}
-        \fbox{\begin{minipage}{\textwidth}
-        For these formulas, we have the following: 
-        $P_0$ is the principal, or amount of a loan. 
-        $r$ is the annual interest rate.
-        $t$ is the number of years which have passed. 
-        $A$ is the total amount.
-        $k$ is the number of times interest is compounded per year. 
-        $d$ is the amount we deposit (or withdraw) from the account regularly,
-        or the payment amount on a loan.
-
-        \begin{center}
-        \begin{tabular}{|c|c|}
-        \hline
-        \T\B Compound Interest & $ A =
-        P_0\left(1+\frac{r}{k}\right)^{kt} $ \\
-        \hline
-        \T\B Savings Annuity & $ A =
-        d\frac{\left(\left(1+\frac{r}{k}\right)^{kt}-1\right)}{\frac{r}{k}} $\\
-        \hline
-        \T\B Payout Annuity/Loans & $P_0 =
-        d\frac{\left(1-\left(1+\frac{r}{k}\right)^{-kt}\right)}{\frac{r}{k}}$ \\
-        \hline
-        \end{tabular}
-        \end{center}
-        \end{minipage}}
-}{% presentation
-}{% nopresentation
-}{% comments
-}
-
-\content{
-        \begin{example}
-        Suppose you obtain a \$3,000 T-note with a 3\% annual rate, paid quarterly, with
-        maturity in 5 years. How much interest will you earn?
-        \end{example}
-}{% presentation
-\vspace{2in}
-}{% nopresentation
-\vspace{2in}
-}{% comments
-}
-
-\content{
-\begin{example}
-You deposit \$300 in an account earning 5\% interest compounded annually. How
-much will you have in the account in 10 years?
-\end{example}
-}{% presentation
-\vspace{2in}
-}{% nopresentation
-\vspace{2in}
-}{% comments
-}
-
-\content{
-        \begin{example}
-        You want to be able to withdraw \$30,000 each year for 25 years. Your account earns
-        8\% interest.
+        \begin{theorem} (Basic facts about modular arithmetic) when $n$ is a
+        natural number, the following are true: 
         \begin{enumerate}
-                \item How much do you need in your account at the beginning
-                \item How much total money will you pull out of the account?
-                \item How much of that money is interest?
+        \item $ (a+b)\mod{n} = (a\mod{n}) + (b\mod{n}) $
+        \item $ (ab)\mod{n} = (a\mod{n})(b\mod{n}) $
+        \item $ a^b \mod{n} = (a\mod{n})^b \mod{n} $
         \end{enumerate}
-        \end{example}
-}{% presentation 
-\vspace{3in}
-}{% nopresentation
-\vspace{3in}
-}{% comments
-}
-
-\content{
-        \begin{example}
-        You want to buy a \$25,000 car. The company is offering a 2\% interest rate for 48
-        months (4 years). What will your monthly payments be?
-        \end{example}
-}{% presentation
-\vspace{3in}
-}{% nopresentation
-\vspace{3in}
-}{% comments
-}
-
-\content{
-        \begin{example}
-        A friend lends you \$200 for a week, which you agree to repay with 5\% one-time
-        interest. How much will you have to repay?
-        \end{example}
-}{% presentation
-\vspace{2in}
-}{% nopresentation
-\vspace{2in}
-}{% comments
-}
-
-\content{
-        \begin{example}
-        You wish to have \$3000 in 2 years to buy a fancy new stereo system. How much
-        should you deposit each quarter into an account paying 8\% compounded quarterly?        
-        \end{example}
-}{% presentation
-\vspace{3in}
-}{% nopresentation
-\vspace{3in}
-}{% comments
-}
-
-\content{
-        \begin{example}
-        You can afford a \$700 per month mortgage payment. You’ve found a 30 year loan at
-        5\% interest.
+        \end{theorem}
+        
+        \begin{example} Compute the following:
         \begin{enumerate}
-                \item How big of a loan can you afford?
-                \item How much total money will you pay the loan company?
-                \item How much of that money is interest?        
+        \item $ 128\cdot 8935 \mod{5} $
+        \item $ 4356^{2532} \mod{4355} $
+        \item $ 4354^{2532} \mod{4355} $
         \end{enumerate}
         \end{example}
 }{% presentation
@@ -146,15 +25,50 @@ much will you have in the account in 10 years?
 }
 
 \content{
-        \begin{example}
-        You deposit \$1000 each year into an account earning 8\% compounded annually.
+        \begin{example} Compute the following:
         \begin{enumerate}
-                \item How much will you have in the account in 10 years?
-                \item How much total money will you put into the account?
-                \item How much total interest will you earn?        
+        \item $ 47^{8} \mod{49} $
+        \item $ 65^{5} \mod{35} $
+        \end{enumerate}
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
+
+\content{
+        \begin{example} Your turn! Compute the following:
+        \begin{enumerate}
+        \item $ 12^8 \mod{4} $
+        \item $ 12^8 \mod{5} $
+        \item $ 5^12 \mod{4} $
+        \item $ 98^{123} \mod{99} $
         \end{enumerate}
         \end{example}
 }{% presentation
 }{% nopresentation
 }{% comments
 }
+
+\content{
+        What else can we do with modular arithmetic? 
+
+        \begin{example} Compute each of the following:
+        \begin{enumerate}
+        \item $45^2\mod{20}$
+        \item $(-35)^2\mod{50}$
+        \end{enumerate}
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+Notice that these give the same answer. It turns out that any computation that
+we do involving 45, can instead be done with the number -35, and vice versa.
+These two numbers are said to be equivalent mod 20. What other numbers are
+equivalent to -35 and 45?
+}
+

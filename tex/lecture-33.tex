@@ -1,10 +1,50 @@
-\subsection{Review of Base Systems and Mayan Numerals}
-
+\subsection{RSA Algorithm}
 
 \content{
-        \begin{example}
-        Write the number $3042_5$ in base 10.        
+        \begin{example} Compute the following: 
+        \begin{enumerate}
+        \item $ 3^9 \mod{15} $
+        \item $ 2^9 \mod{15} $
+        \item $ 9^9 \mod{15} $
+        \item $14^9 \mod{15} $
+        \end{enumerate}
         \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
+
+\content{
+        \begin{example} What might we do with the above observation? 
+        \end{example}
+        \newpage
+}{% presentation
+}{% nopresentation
+}{% comments
+Factor 9 into 3 and 3, then notice that this gives rise to a 2-step process, we
+could compute $b = a^3 \mod{15}$, then $c = b^3 \mod{15}$, but then
+$c=a^9\mod{15} = a \mod{15}$. So we can recover what $a$ was. 
+}
+
+\content{
+        \begin{definition} (RSA Algorithm) Each party wishing to communicate
+        does the following:
+        \begin{enumerate}
+        \item Pick two prime numbers, $p$ and $q$. 
+        \item Compute $n=p*q$.
+        \item Compute $\phi(n) = (p-1)*(q-1)$
+        \item Pick a public key $e$ satisfying $\gcd(e,\phi(n)) = 1$.
+        \item Find $d$ such that $d*e \equiv 1\mod{\phi(n)}$.
+        \item Publish $e$ and $n$ as public keys. 
+        \item Guard $p$, $q$, and $\phi(n)$ as secret, and keeps $d$ secret as a
+        secret key.
+        \end{enumerate}
+        \end{definition}
+
+        \textbf{Question:} What makes this secure? What step is hard to compute
+        without the secret keys? 
 }{% presentation
 \vspace{2in}
 }{% nopresentation
@@ -13,74 +53,23 @@
 }
 
 \content{
-        \begin{example}
-        Write the number $81173_9$ in base 10.        
+        \begin{example} Encrypt the word ``help'' using the RSA algorithm
+        $n=3551$, $e=629$, and $d=1997$.
         \end{example}
 }{% presentation
-\vspace{2in}
+\vspace{4in}
 }{% nopresentation
-\vspace{2in}
+\vspace{4in}
 }{% comments
 }
 
 \content{
-        \begin{example}
-        Write $1024$ in base $6$.
-        \end{example}
-}{% presentation
-\vspace{2in}
-}{% nopresentation
-\vspace{2in}
-}{% comments
-}
-
-\content{
-        \begin{example}
-        Write $932$ in base 9.        
-        \end{example}
-}{% presentation
-\vspace{2in}
-}{% nopresentation
-\vspace{2in}
-}{% comments
-}
-
-\content{
-        \begin{example}
-        Write $721_8$ in base 10.        
-        \end{example}
-}{% presentation
-\vspace{2in}
-}{% nopresentation
-\vspace{2in}
-}{% comments
-}
-
-\content{
-        \begin{example}
-        Write $321_4$ in base 5. (Hint: first convert to base 10)
-        \end{example}
-}{% presentation
-\vspace{2in}
-}{% nopresentation
-\vspace{2in}
-}{% comments
-}
-
-\content{
-        \begin{minipage}[t]{0.65\textwidth}
-        \vspace{0pt}
-        Recall the Mayan positional system.
-        \begin{example}
-        Write $35$ and $89$ in the Mayan numeral system, then compute their sum
-        using that representation.
-        \end{example}
-        \end{minipage}\hfill
-        \begin{minipage}[t]{0.3\textwidth}
-        \vspace{0pt}
-        \includegraphics[scale=0.25]{mayan-symbols.png}
-        \end{minipage}
+        Ok... no more hand calculations for this lecture! Current best practices
+        recommend a key length of at least 2048 bits, that means that $n$ should
+        be a number with around 617 digits! Let's see a few examples with a
+        computer.
 }{% presentation
 }{% nopresentation
 }{% comments
+Go to website, and see some examples of how this looks with larger primes. 
 }
