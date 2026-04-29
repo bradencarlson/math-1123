@@ -1,51 +1,15 @@
 \subsection{Public Key Cryptography}
 
-\subsubsection{Key Exchange}
-
-\content{
-        Up to this point every method of sending an encrypted message requires a
-        secret key known to both Alice and Bob. A big problem in cryptography is
-        the following: 
-
-        Suppose that Alice and Bob are unable to meet in person, they have to
-        email each other to agree on the secret key.  Unfortunatly, Eve has
-        access to Alice's emails, and thus can read any emails that are sent
-        between Alice and Bob. How can Alice and Bob decide on a secret key
-        without the key falling into Eve's hands? 
-}{% presentation
-\newpage
-}{% nopresentation
-\vspace{3in}
-}{% comments
-We need some `one-way function' that is easy to compute, but hard to undo. 
-
-Illustrate how this can be done with the paint mixing example. In this example,
-the secret key is the final paint color. 
-
-Of course, since Alice and Bob are using computers, the one-way function will
-need to be a numerical function. 
-}
-
 \subsubsection{Modular Arithmetic}
-
-\content{
-        What is modular arithmetic? 
-}{% presentation
-\vspace{3in}
-}{% nopresentation
-\vspace{3in}
-}{% comments
-Do clock example. $8+5 \text{"="} 1$, we will write this as $8+5\equiv 1 \mod{12}$.
-}
 
 \content{
         \begin{definition} The \textbf{modulus} is another name for the
         remainder after division.
         \end{definition}
 }{% presentation
-\vspace{2in}
+\vspace{1in}
 }{% nopresentation
-\vspace{2in}
+\vspace{1in}
 }{% comments
 }
 
@@ -54,7 +18,6 @@ Do clock example. $8+5 \text{"="} 1$, we will write this as $8+5\equiv 1 \mod{12
         \begin{enumerate}
         \item $ 15 \mod{7}$
         \item $ 125 \mod{43}$
-        \item $ 5 \mod{20}$
         \item $ -12 \mod{7}$
         \item $ 2^7 \mod{5}$
         \end{enumerate}
@@ -72,11 +35,34 @@ $n-1$.
         \begin{example} Your turn! Compute the following
         \begin{enumerate}
         \item $ 123 \mod{19} $
-        \item $ 65 \mod{12} $
         \item $ -923 \mod{134} $
         \item $ -124 \mod{543} $
         \item $ 1045 \mod{521} $
         \item $ 8324 \mod{358}$
+        \end{enumerate}
+        \end{example}
+}{% presentation
+\vspace{3in}
+}{% nopresentation
+\vspace{3in}
+}{% comments
+}
+
+\content{
+        \begin{theorem} (Basic facts about modular arithmetic) when $n$ is a
+        natural number, the following are true: 
+        \begin{enumerate}
+        \item $ (a+b)\mod{n} = (a\mod{n}) + (b\mod{n}) $
+        \item $ (ab)\mod{n} = (a\mod{n})(b\mod{n}) $
+        \item $ a^b \mod{n} = (a\mod{n})^b \mod{n} $
+        \end{enumerate}
+        \end{theorem}
+        
+        \begin{example} Compute the following:
+        \begin{enumerate}
+        \item $ 128\cdot 8935 \mod{5} $
+        \item $ 4356^{2532} \mod{4355} $
+        \item $ 4354^{2532} \mod{4355} $
         \end{enumerate}
         \end{example}
 }{% presentation

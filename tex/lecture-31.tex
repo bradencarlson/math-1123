@@ -1,30 +1,6 @@
 \subsection{Basic Facts About Modular Arithmetic}
 
 \content{
-        \begin{theorem} (Basic facts about modular arithmetic) when $n$ is a
-        natural number, the following are true: 
-        \begin{enumerate}
-        \item $ (a+b)\mod{n} = (a\mod{n}) + (b\mod{n}) $
-        \item $ (ab)\mod{n} = (a\mod{n})(b\mod{n}) $
-        \item $ a^b \mod{n} = (a\mod{n})^b \mod{n} $
-        \end{enumerate}
-        \end{theorem}
-        
-        \begin{example} Compute the following:
-        \begin{enumerate}
-        \item $ 128\cdot 8935 \mod{5} $
-        \item $ 4356^{2532} \mod{4355} $
-        \item $ 4354^{2532} \mod{4355} $
-        \end{enumerate}
-        \end{example}
-}{% presentation
-\vspace{3in}
-}{% nopresentation
-\vspace{3in}
-}{% comments
-}
-
-\content{
         \begin{example} Compute the following:
         \begin{enumerate}
         \item $ 47^{8} \mod{49} $
@@ -43,7 +19,7 @@
         \begin{enumerate}
         \item $ 12^8 \mod{4} $
         \item $ 12^8 \mod{5} $
-        \item $ 5^12 \mod{4} $
+        \item $ 5^{12} \mod{4} $
         \item $ 98^{123} \mod{99} $
         \end{enumerate}
         \end{example}
@@ -57,8 +33,9 @@
 
         \begin{example} Compute each of the following:
         \begin{enumerate}
-        \item $45^2\mod{20}$
-        \item $(-35)^2\mod{50}$
+        \item $3^{10} \mod{22}$
+        \item $5^{10} \mod{22}$
+        \item $21^{10}\mod{22}$
         \end{enumerate}
         \end{example}
 }{% presentation
@@ -66,9 +43,87 @@
 }{% nopresentation
 \vspace{3in}
 }{% comments
-Notice that these give the same answer. It turns out that any computation that
-we do involving 45, can instead be done with the number -35, and vice versa.
-These two numbers are said to be equivalent mod 20. What other numbers are
-equivalent to -35 and 45?
+Talk briefly about Euler's Theorem: 
+$$a^{\phi(n)}\equiv 1\mod{n}$$
+when $\gcd(a,n)=1$.
 }
 
+\content{
+        \begin{definition} Euler's totient function $\phi$ is defined as
+        follows: If $n$ is a positive whole number, and $p_1,p_2,\dots,p_n$ are
+        all the prime numbers dividing $n$, then 
+        $$ \phi(n) =
+        n\left(1-\frac{1}{p_1}\right)\left(1-\frac{1}{p_2}\right)\cdots
+        \left(1-\frac{1}{p_n}\right)$$
+        \end{definition}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+        \begin{example} Compute the following:
+        \begin{enumerate}
+        \item $\phi(27)$
+        \item $\phi(19)$
+        \item $\phi(42)$
+        \item $\phi(124)$
+        \end{enumerate}
+        \end{example}
+}{% presentation
+\vspace{2in}
+}{% nopresentation
+\vspace{2in}
+}{% comments
+}
+
+\content{
+        \begin{example} So how might we compute something like the following:
+        $$ 128^{1324} \mod{34} $$
+        \end{example}
+}{% presentation
+\vspace{2in}
+}{% nopresentation
+\vspace{1in}
+}{% comments
+16
+}
+
+\content{
+        \begin{example} Your turn! Compute
+        $$ 415^{1521} \mod{27}. $$
+        \end{example}
+}{% presentation
+\vspace{1in}
+}{% nopresentation
+\vspace{1in}
+}{% comments
+1
+}
+
+
+\subsubsection{Key Exchange}
+
+\content{
+        Up to this point every method of sending an encrypted message requires a
+        secret key known to both Alice and Bob. A big problem in cryptography is
+        the following: 
+
+        Suppose that Alice and Bob are unable to meet in person, they have to
+        email each other to agree on the secret key.  Unfortunatly, Eve has
+        access to Alice's emails, and thus can read any emails that are sent
+        between Alice and Bob. How can Alice and Bob decide on a secret key
+        without the key falling into Eve's hands? 
+}{% presentation
+\newpage
+}{% nopresentation
+\vspace{3in}
+}{% comments
+We need some `one-way function' that is easy to compute, but hard to undo. 
+
+Illustrate how this can be done with the paint mixing example. In this example,
+the secret key is the final paint color. 
+
+Of course, since Alice and Bob are using computers, the one-way function will
+need to be a numerical function. 
+}
