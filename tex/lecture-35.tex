@@ -1,0 +1,271 @@
+\subsection{Review of Logic}
+
+\content{
+        \begin{definition} A \textbf{statement} is either true or false.
+        \end{definition}
+        \begin{definition} Boolean Logic combines multiple statements
+        that are either true or false into an expression that is
+        either true or false. 
+        \end{definition}
+}{% presentation
+\vspace{2in}
+}{% nopresentation
+\vspace{2in}
+}{% comments
+Mention that three of the most common operations in boolean logic are 'and`,
+'or`, and 'not`, and that these correspond to three set operations.
+}
+
+\content{
+        \begin{definition} A \textbf{conditional} is a compound
+        statement of the form "if $p$, then $q$`` or 
+        "if $p$, then $q$, else $r$``.
+        \end{definition}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+        \begin{definition} A \textbf{universial quantifier} states that an
+        entire set shares a characteristic. 
+        \end{definition}
+
+        \begin{definition} A \textbf{existential quantifier} states that a set
+        contains at least one element.
+        \end{definition}
+}{% presentation
+}{% nopresentation
+}{% comments
+Something interesting happens when you negate a quantifier...
+}
+
+\content{
+\begin{definition} We use the following symbols for conjunction (and),
+disjunction (or), and negation (not): 
+$$ \text{and: } \land,\quad \text{or: }\lor,\quad 
+\text{not: }\neg. $$
+Sometimes you may see the symbol $\sim$ used for negation instead of $\neg$.
+\end{definition}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+\begin{example} Let $C$ be the statement ``I like Coca-Cola" and $P$ be the
+statement ``I like Pepsi". Write the following in symbols.
+\begin{enumerate}
+\item I like Coke and Pepsi
+\item I like Coke or I like Pepsi
+\item I do not like Coke
+\item I like Coke and I do not like Pepsi
+\end{enumerate}
+\end{example}
+}{% presentation
+\vspace{1in}
+}{% nopresentation
+}{% comments
+}
+
+\content{
+\begin{definition} A \textbf{truth table} is a table showing the value of a
+compound statement for all possible values of the simple statements. 
+\end{definition}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+\begin{example} Construct a truth table for the compound statement $p\land q$.\\
+\begin{tabular}{|c|c|c|}
+\hline
+$p$ & $q$ &\hspace{0.75cm}  \\
+\hline
+T & T &  \\
+\hline
+T & F &  \\
+\hline
+F & T &  \\
+\hline
+F & F &  \\
+\hline
+\end{tabular}
+\end{example}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+\begin{example} Construct a truth table for the compound statement 
+$\neg (p\land q)$.\\
+\begin{tabular}{|c|c|c|c|}
+\hline
+$p$ & $q$ &\hspace{0.75cm} & \hspace{0.75cm} \\
+\hline
+T & T & & \\
+\hline
+T & F & & \\
+\hline
+F & T & & \\
+\hline
+F & F & & \\
+\hline
+\end{tabular}
+\end{example}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+\begin{definition}
+A conditional is a logical compound statement in which a statement $p$, implies
+a statement $q$. This is written $p\Rightarrow q$ (or sometimes $p\rightarrow
+q$). The truth table of the conditional $p\Rightarrow q$ is:\\
+\begin{tabular}{|c|c|c|}
+\hline
+$p$ & $q$ & $p \Rightarrow q$ \\
+\hline
+T & T &  T\\
+\hline
+T & F &  F\\
+\hline
+F & T &  T\\
+\hline
+F & F &  T\\
+\hline
+\end{tabular}
+\end{definition}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+\begin{example} Construct a truth table for the compound statement 
+$(p\lor q)\Rightarrow r$.\\
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$p$ & $q$ & $r$ & \hspace{0.75cm} & \hspace{0.75cm} & \hspace{1.5cm} \\
+\hline
+T & T & T & & & \\
+\hline
+T & T & F & & &\\
+\hline
+T & F & T& & & \\
+\hline
+T & F & F& & &\\
+\hline
+F & T & T & & &\\
+\hline
+F & T & F& & & \\
+\hline
+F & F & T& & &\\
+\hline
+F & F & F& & &\\
+\hline
+\end{tabular}
+\end{example}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+        \begin{definition} (Analyze Argument with Truth Table) To perform the
+        analysis, we do the following steps:
+        \begin{enumerate}
+        \item Represent each of the premises symbolically
+        \item Combine all premises to form a compound statement, this will form
+        the antecedent
+        \item Create a conditional statement with the conclusion as the
+        consequent
+        \item Create a truth table for the statement, if it is always true, the
+        argument was valid.
+        \end{enumerate}
+        \end{definition}
+}{% presentation
+}{% nopresentation
+}{% comments
+}
+
+\content{
+        \begin{example} Consider the argument: 
+        \begin{enumerate}
+        \item Premise: ``If you bought bread, you went to the store."
+        \item Premise: ``You bought bread"
+        \item Conclusion: ``You went to the store."
+        \end{enumerate}
+        \end{example}
+}{% presentation
+\begin{tabular}{|c|c|c|c|}
+\hline
+ &  &\hspace{2cm} &\hspace{3cm}  \\
+\hline
+T & T &&  \\
+\hline
+T & F &&  \\
+\hline
+F & T &&  \\
+\hline
+F & F &&  \\
+\hline
+\end{tabular}
+}{% nopresentation
+\begin{tabular}{|c|c|c|c|}
+\hline
+ &  &\hspace{0.75cm} &\hspace{0.75cm}  \\
+\hline
+T & T &&  \\
+\hline
+T & F &&  \\
+\hline
+F & T &&  \\
+\hline
+F & F &&  \\
+\hline
+\end{tabular}
+}{% comments
+}
+
+\content{
+        \begin{example} Consider the argument: 
+        \begin{enumerate}
+        \item Premise: ``If you listen to the Grateful Dead, you are a hippie."
+        \item Premise: ``Sky does not listen to the Grateful Dead"
+        \item Conclusion: ``Sky is not a hippie."
+        \end{enumerate}
+        \end{example}
+}{% presentation
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+ &  &\hspace{0.75cm} &\hspace{0.75cm} & \hspace{2cm}  \\
+\hline
+T & T &&&  \\
+\hline
+T & F &&&  \\
+\hline
+F & T &&&  \\
+\hline
+F & F &&&  \\
+\hline
+\end{tabular}
+}{% nopresentation
+\begin{tabular}{|c|c|c|c|}
+\hline
+ &  &\hspace{0.75cm} &\hspace{0.75cm}  \\
+\hline
+T & T &&  \\
+\hline
+T & F &&  \\
+\hline
+F & T &&  \\
+\hline
+F & F &&  \\
+\hline
+\end{tabular}
+}{% comments
+}
